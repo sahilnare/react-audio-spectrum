@@ -109,11 +109,11 @@ class AudioSpectrum extends Component {
             this.analyser.smoothingTimeConstant = 0.8
             this.analyser.fftSize = 2048
         }
-        
+
         if (!this.mediaEleSource) {
             this.mediaEleSource = this.audioContext.createMediaElementSource(audioEle)
             this.mediaEleSource.connect(this.analyser)
-            this.mediaEleSource.connect(this.audioContext.destination);
+            // this.mediaEleSource.connect(this.audioContext.destination);
         }
 
         return this.analyser
@@ -128,7 +128,7 @@ class AudioSpectrum extends Component {
         } else {
             this.audioEle = audioEle
         }
-        
+
         this.audioCanvas = document.getElementById(this.canvasId)
     }
     prepareAPIs = () => {
